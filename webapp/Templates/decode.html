@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decode Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+            padding: 20px;
+            text-align: center;
+            background-image: url("https://static.vecteezy.com/system/resources/thumbnails/021/438/790/original/digits-code-black-and-green-background-with-numbers-moving-on-the-screen-concept-of-the-digital-age-hud-interface-data-code-decryption-and-encoding-matrix-background-video.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+                .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 48px; /* Increase font size */
+            margin-top: 20px; /* Add margin to push the title down */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 20px; /* Add padding to increase background size */
+            border-radius: 10px; /* Rounded corners */
+        }
+        .alert {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .alert-success {
+            background-color: #d4edda; /* Light green background for success message */
+            color: #155724; /* Dark green text color */
+        }
+        .alert-danger {
+            background-color: #f8d7da; /* Light red background for error message */
+            color: #721c24; /* Dark red text color */
+        }
+        form {
+            margin-top: 20px;
+            background-color: #fff; /* White background for form */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            display: inline-block;
+        }
+        input[type="file"], input[type="password"], input[type="submit"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        p {
+            color: white;
+            text-align: center;
+            font-size: 48px; /* Increase font size */
+            margin-top: 20px; /* Add margin to push the title down */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 20px; /* Add padding to increase background size */
+            border-radius: 10px; /* Rounded corners */
+        }
+        pre {
+            color: white;
+            text-align: center;
+            font-size: 48px; /* Increase font size */
+            margin-top: 20px; /* Add margin to push the title down */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 20px; /* Add padding to increase background size */
+            border-radius: 10px; /* Rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <h1>Decode Text</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% if message %}
+        <p>Decoded Message:</p>
+        <pre>{{ message }}</pre>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required><br><br>
+        <input type="password" name="password" placeholder="Enter your password" required><br><br>
+        <input type="submit" value="Decode">
+        <a href="/" class="back-button">Back to Main Menu</a
+
+    </form>
+
+</body>
+</html>
